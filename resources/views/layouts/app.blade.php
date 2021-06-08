@@ -12,6 +12,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/vendor_components/font-awesome/css/font-awesome.min.css') }}">
 
         @livewireStyles
 

@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
-        protected $guarded = ['id'];
+    protected $guarded = ['id'];
     use HasFactory;
 
-        public function imageable()
+    public function imageable()
     {
         return $this->morphTo();
     }
