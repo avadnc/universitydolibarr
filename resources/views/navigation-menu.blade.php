@@ -5,14 +5,18 @@ $nav_links = [
         'route' => route('home'),
         'active' => request()->routeIs('home'),
     ],
-
+    [
+        'name' => 'Courses',
+        'route' => route('courses.index'),
+        'active' => request()->routeIs('courses.*'),
+    ],
 ];
 
 @endphp
 
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100 shadow">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
@@ -131,6 +135,10 @@ $nav_links = [
                                     {{ __('Profile') }}
                                 </x-jet-dropdown-link>
 
+                                <x-jet-dropdown-link href="{{ route('instructor.courses.index') }}">
+                                    {{ __('Instructor') }}
+                                </x-jet-dropdown-link>
+
                                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                     <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
                                         {{ __('API Tokens') }}
@@ -144,15 +152,16 @@ $nav_links = [
                                     @csrf
 
                                     <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                        this.closest('form').submit();">
-                                        {{ __('Log Out') }}
+                                                            this.closest('form').submit();">
+                                        {{ __('Logout') }}
                                     </x-jet-dropdown-link>
                                 </form>
                             </x-slot>
                         </x-jet-dropdown>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">{{ __('Login') }}</a>
-                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">{{ __('Register') }}</a>
+                        <a href="{{ route('register') }}"
+                            class="ml-4 text-sm text-gray-700 underline">{{ __('Register') }}</a>
                     @endauth
 
                 </div>
@@ -209,6 +218,10 @@ $nav_links = [
                         {{ __('Profile') }}
                     </x-jet-responsive-nav-link>
 
+                    <x-jet-dropdown-link href="{{ route('instructor.courses.index') }}">
+                        {{ __('Instructor') }}
+                    </x-jet-dropdown-link>
+
                     @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                         <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}"
                             :active="request()->routeIs('api-tokens.index')">
@@ -221,8 +234,8 @@ $nav_links = [
                         @csrf
 
                         <x-jet-responsive-nav-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                            {{ __('Log Out') }}
+                                            this.closest('form').submit();">
+                            {{ __('Logout') }}
                         </x-jet-responsive-nav-link>
                     </form>
 
@@ -265,7 +278,7 @@ $nav_links = [
                 <x-jet-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
                     {{ __('Login') }}
                 </x-jet-responsive-nav-link>
-                 <x-jet-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                <x-jet-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
                     {{ __('Register') }}
                 </x-jet-responsive-nav-link>
             </div>
