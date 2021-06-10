@@ -1,46 +1,40 @@
+@php
+    $title = "Dashboard";
+@endphp
+
 @extends('admin.layouts.app')
 
-@section('styles')
-
-@endsection
-
-@section('content-header')
-    <h1>
-        Blank page
-    </h1>
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Examples</a></li>
-        <li class="breadcrumb-item active">Blank page</li>
-    </ol>
-@endsection
 
 @section('content')
-    <!-- Default box -->
-    <div class="box">
-        <div class="box-header with-border">
-            <h3 class="box-title">Title</h3>
-
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                    title="Collapse">
-                    <i class="fa fa-minus"></i></button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-                    <i class="fa fa-times"></i></button>
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-lg-6 main-header">
+                    <h2>Default<span>Dashboard </span></h2>
+                    <h6 class="mb-0">admin panel</h6>
+                </div>
+                <div class="col-lg-6 breadcrumb-right">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="pe-7s-home"></i></a></li>
+                        <li class="breadcrumb-item">Dashboard</li>
+                        <li class="breadcrumb-item active">Default </li>
+                    </ol>
+                </div>
             </div>
         </div>
-        <div class="box-body">
-            This is some text within a card block.
-        </div>
-        <!-- /.box-body -->
-        <div class="box-footer">
-            Footer
-        </div>
-        <!-- /.box-footer-->
     </div>
-    <!-- /.box -->
+    <!-- Container-fluid starts-->
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-12 xl-100">
+                <div class="row">
+                    <h2>Hola desde Admin.index.blade</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container-fluid Ends-->
+    </div>
 @endsection
 
-@section('scripts')
-
-@endsection

@@ -1,358 +1,170 @@
-            <header class="main-header">
-                <!-- Logo -->
-                <a href="../../index.html" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <b class="logo-mini">
-                        <span class="light-logo"><img src="../../../images/logo-light.png" alt="logo"></span>
-                        <span class="dark-logo"><img src="../../../images/logo-dark.png" alt="logo"></span>
-                    </b>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg">
-                        <img src="../../../images/logo-light-text.png" alt="logo" class="light-logo">
-                        <img src="../../../images/logo-dark-text.png" alt="logo" class="dark-logo">
-                    </span>
-                </a>
-                <!-- Header Navbar -->
-                <nav class="navbar navbar-static-top">
-                    <!-- Sidebar toggle button-->
-                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                        <span class="sr-only">Toggle navigation</span>
-                    </a>
 
-                    <div class="navbar-custom-menu">
-                        <ul class="nav navbar-nav">
+          <div class="main-header-right">
+              <div class="main-header-left text-center">
+                  <div class="logo-wrapper"><a href="index.html"><img src="{{ asset('assets/images/logo/logo.png') }}"
+                              alt=""></a>
+                  </div>
+              </div>
+              <div class="mobile-sidebar">
+                  <div class="media-body text-right switch-sm">
+                      <label class="switch ml-3"><i class="font-primary" id="sidebar-toggle"
+                              data-feather="align-center"></i></label>
+                  </div>
+              </div>
+              <div class="vertical-mobile-sidebar"><i class="fa fa-bars sidebar-bar"> </i></div>
+              <div class="nav-right col pull-right right-menu">
+                  <ul class="nav-menus">
+                      <li>
+                          {{-- <form class="form-inline search-form" action="#" method="get">
+                              <div class="form-group">
+                                  <div class="Typeahead Typeahead--twitterUsers">
+                                      <div class="u-posRelative">
+                                          <input class="Typeahead-input form-control-plaintext" id="demo-input"
+                                              type="text" name="q" placeholder="Buscar">
+                                          <div class="spinner-border Typeahead-spinner" role="status">
+                                              <span
+                                                  class="sr-only">Loading...</span></div><span
+                                              class="d-sm-none mobile-search"><i data-feather="search"></i></span>
+                                      </div>
+                                      <div class="Typeahead-menu"></div>
+                                  </div>
+                              </div>
+                          </form> --}}
+                      </li>
+                      {{-- <li><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i
+                                  data-feather="maximize"></i></a></li> --}}
+                      {{-- <li class="onhover-dropdown"><img class="img-fluid img-shadow-warning"
+                              src="../assets/images/dashboard/bookmark.png" alt="">
+                          <div class="onhover-show-div bookmark-flip">
+                              <div class="flip-card">
+                                  <div class="flip-card-inner">
+                                      <div class="front">
+                                          <ul class="droplet-dropdown bookmark-dropdown">
+                                              <li class="gradient-primary text-center">
+                                                  <h5 class="f-w-700">Bookmark</h5><span>Bookmark Icon With Grid</span>
+                                              </li>
+                                              <li>
+                                                  <div class="row">
+                                                      <div class="col-4 text-center"><i data-feather="file-text"></i>
+                                                      </div>
+                                                      <div class="col-4 text-center"><i data-feather="activity"></i>
+                                                      </div>
+                                                      <div class="col-4 text-center"><i data-feather="users"></i></div>
+                                                      <div class="col-4 text-center"><i data-feather="clipboard"></i>
+                                                      </div>
+                                                      <div class="col-4 text-center"><i data-feather="anchor"></i></div>
+                                                      <div class="col-4 text-center"><i data-feather="settings"></i>
+                                                      </div>
+                                                  </div>
+                                              </li>
+                                              <li class="text-center">
+                                                  <button class="flip-btn" id="flip-btn">Add New Bookmark</button>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                      <div class="back">
+                                          <ul>
+                                              <li>
+                                                  <div class="droplet-dropdown bookmark-dropdown flip-back-content">
+                                                      <input type="text" placeholder="search...">
+                                                  </div>
+                                              </li>
+                                              <li>
+                                                  <button class="d-block flip-back" id="flip-back">Back</button>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="onhover-dropdown"><img class="img-fluid img-shadow-secondary"
+                              src="../assets/images/dashboard/like.png" alt="">
+                          <ul class="onhover-show-div droplet-dropdown">
+                              <li class="gradient-primary text-center">
+                                  <h5 class="f-w-700">Grid Dashboard</h5><span>Easy Grid inside dropdown</span>
+                              </li>
+                              <li>
+                                  <div class="row">
+                                      <div class="col-sm-4 col-6 droplet-main"><i data-feather="file-text"></i><span
+                                              class="d-block">Content</span></div>
+                                      <div class="col-sm-4 col-6 droplet-main"><i data-feather="activity"></i><span
+                                              class="d-block">Activity</span></div>
+                                      <div class="col-sm-4 col-6 droplet-main"><i data-feather="users"></i><span
+                                              class="d-block">Contacts</span></div>
+                                      <div class="col-sm-4 col-6 droplet-main"><i data-feather="clipboard"></i><span
+                                              class="d-block">Reports</span></div>
+                                      <div class="col-sm-4 col-6 droplet-main"><i data-feather="anchor"></i><span
+                                              class="d-block">Automation</span></div>
+                                      <div class="col-sm-4 col-6 droplet-main"><i data-feather="settings"></i><span
+                                              class="d-block">Settings</span></div>
+                                  </div>
+                              </li>
+                              <li class="text-center">
+                                  <button class="btn btn-primary btn-air-primary">Follows Up</button>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class="onhover-dropdown"><img class="img-fluid img-shadow-warning"
+                              src="../assets/images/dashboard/notification.png" alt="">
+                          <ul class="onhover-show-div notification-dropdown">
+                              <li class="gradient-primary">
+                                  <h5 class="f-w-700">Notifications</h5><span>You have 6 unread messages</span>
+                              </li>
+                              <li>
+                                  <div class="media">
+                                      <div class="notification-icons bg-success mr-3"><i class="mt-0"
+                                              data-feather="thumbs-up"></i></div>
+                                      <div class="media-body">
+                                          <h6>Someone Likes Your Posts</h6>
+                                          <p class="mb-0"> 2 Hours Ago</p>
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="pt-0">
+                                  <div class="media">
+                                      <div class="notification-icons bg-info mr-3"><i class="mt-0"
+                                              data-feather="message-circle"></i></div>
+                                      <div class="media-body">
+                                          <h6>3 New Comments</h6>
+                                          <p class="mb-0"> 1 Hours Ago</p>
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="bg-light txt-dark"><a href="#">All </a> notification</li>
+                          </ul>
+                      </li> --}}
+                      {{-- <li><a class="right_side_toggle" href="#"><img class="img-fluid img-shadow-success"
+                                  src="../assets/images/dashboard/chat.png" alt=""></a></li> --}}
 
-                            <li class="search-box">
-                                <a class="nav-link hidden-sm-down" href="javascript:void(0)"><i
-                                        class="mdi mdi-magnify"></i></a>
-                                <form class="app-search" style="display: none;">
-                                    <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
-                                        class="srh-btn"><i class="ti-close"></i></a>
-                                </form>
-                            </li>
+                      <li class="onhover-dropdown"> <span class="media user-header"><img style="max-width: 5rem;" class="img-fluid rounded-circle" src="{{ Auth::user()->profile_photo_url }}"
+                                  alt=""></span>
+                          <ul class="onhover-show-div profile-dropdown">
+                              <li class="gradient-primary">
+                                  <h5 class="f-w-600 mb-0">{{ Auth::user()->name }}</h5> <span><small
+                                          class="mb-5">{{ Auth::user()->email }}</small></span>
+                              </li>
+                              <li><a href="{{ route('profile.show') }}"><i data-feather="user"></i>{{ __('Profile') }}</a></li>
+                              <li><a href="{{ route('courses.index') }}"><i data-feather="book-open"></i>{{ __('Courses') }}</a></li>
+                              <li>
 
-                            {{-- <!-- Messages -->
-                            <li class="dropdown messages-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="mdi mdi-email"></i>
-                                </a>
-                                <ul class="dropdown-menu scale-up">
-                                    <li class="header">You have 5 messages</li>
-                                    <li>
-                                        <!-- inner menu: contains the actual data -->
-                                        <ul class="menu inner-content-div">
-                                            <li>
-                                                <!-- start message -->
-                                                <a href="#">
-                                                    <div class="pull-left">
-                                                        <img src="../../../images/user2-160x160.jpg"
-                                                            class="rounded-circle" alt="User Image">
-                                                    </div>
-                                                    <div class="mail-contnet">
-                                                        <h4>
-                                                            Lorem Ipsum
-                                                            <small><i class="fa fa-clock-o"></i> 15 mins</small>
-                                                        </h4>
-                                                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                            elit.</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <!-- end message -->
-                                            <li>
-                                                <a href="#">
-                                                    <div class="pull-left">
-                                                        <img src="../../../images/user3-128x128.jpg"
-                                                            class="rounded-circle" alt="User Image">
-                                                    </div>
-                                                    <div class="mail-contnet">
-                                                        <h4>
-                                                            Nullam tempor
-                                                            <small><i class="fa fa-clock-o"></i> 4 hours</small>
-                                                        </h4>
-                                                        <span>Curabitur facilisis erat quis metus congue viverra.</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <div class="pull-left">
-                                                        <img src="../../../images/user4-128x128.jpg"
-                                                            class="rounded-circle" alt="User Image">
-                                                    </div>
-                                                    <div class="mail-contnet">
-                                                        <h4>
-                                                            Proin venenatis
-                                                            <small><i class="fa fa-clock-o"></i> Today</small>
-                                                        </h4>
-                                                        <span>Vestibulum nec ligula nec quam sodales rutrum sed
-                                                            luctus.</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <div class="pull-left">
-                                                        <img src="../../../images/user3-128x128.jpg"
-                                                            class="rounded-circle" alt="User Image">
-                                                    </div>
-                                                    <div class="mail-contnet">
-                                                        <h4>
-                                                            Praesent suscipit
-                                                            <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                                                        </h4>
-                                                        <span>Curabitur quis risus aliquet, luctus arcu nec, venenatis
-                                                            neque.</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <div class="pull-left">
-                                                        <img src="../../../images/user4-128x128.jpg"
-                                                            class="rounded-circle" alt="User Image">
-                                                    </div>
-                                                    <div class="mail-contnet">
-                                                        <h4>
-                                                            Donec tempor
-                                                            <small><i class="fa fa-clock-o"></i> 2 days</small>
-                                                        </h4>
-                                                        <span>Praesent vitae tellus eget nibh lacinia pretium.</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="footer"><a href="#">See all e-Mails</a></li>
-                                </ul>
-                            </li>
-                            <!-- Notifications -->
-                            <li class="dropdown notifications-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="mdi mdi-bell"></i>
-                                </a>
-                                <ul class="dropdown-menu scale-up">
-                                    <li class="header">You have 7 notifications</li>
-                                    <li>
-                                        <!-- inner menu: contains the actual data -->
-                                        <ul class="menu inner-content-div">
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-users text-aqua"></i> Curabitur id eros quis nunc
-                                                    suscipit blandit.
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-warning text-yellow"></i> Duis malesuada justo eu
-                                                    sapien elementum, in semper diam posuere.
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-users text-red"></i> Donec at nisi sit amet tortor
-                                                    commodo porttitor pretium a erat.
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-shopping-cart text-green"></i> In gravida mauris et
-                                                    nisi
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-user text-red"></i> Praesent eu lacus in libero
-                                                    dictum fermentum.
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-user text-red"></i> Nunc fringilla lorem
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-user text-red"></i> Nullam euismod dolor ut quam
-                                                    interdum, at scelerisque ipsum imperdiet.
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="footer"><a href="#">View all</a></li>
-                                </ul>
-                            </li>
-                            <!-- Tasks -->
-                            <li class="dropdown tasks-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="mdi mdi-message"></i>
-                                </a>
-                                <ul class="dropdown-menu scale-up">
-                                    <li class="header">You have 6 tasks</li>
-                                    <li>
-                                        <!-- inner menu: contains the actual data -->
-                                        <ul class="menu inner-content-div">
-                                            <li>
-                                                <!-- Task item -->
-                                                <a href="#">
-                                                    <h3>
-                                                        Lorem ipsum dolor sit amet
-                                                        <small class="pull-right">30%</small>
-                                                    </h3>
-                                                    <div class="progress xs">
-                                                        <div class="progress-bar progress-bar-aqua" style="width: 30%"
-                                                            role="progressbar" aria-valuenow="20" aria-valuemin="0"
-                                                            aria-valuemax="100">
-                                                            <span class="sr-only">30% Complete</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <!-- end task item -->
-                                            <li>
-                                                <!-- Task item -->
-                                                <a href="#">
-                                                    <h3>
-                                                        Vestibulum nec ligula
-                                                        <small class="pull-right">20%</small>
-                                                    </h3>
-                                                    <div class="progress xs">
-                                                        <div class="progress-bar progress-bar-danger" style="width: 20%"
-                                                            role="progressbar" aria-valuenow="20" aria-valuemin="0"
-                                                            aria-valuemax="100">
-                                                            <span class="sr-only">20% Complete</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <!-- end task item -->
-                                            <li>
-                                                <!-- Task item -->
-                                                <a href="#">
-                                                    <h3>
-                                                        Donec id leo ut ipsum
-                                                        <small class="pull-right">70%</small>
-                                                    </h3>
-                                                    <div class="progress xs">
-                                                        <div class="progress-bar progress-bar-light-blue"
-                                                            style="width: 70%" role="progressbar" aria-valuenow="20"
-                                                            aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">70% Complete</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <!-- end task item -->
-                                            <li>
-                                                <!-- Task item -->
-                                                <a href="#">
-                                                    <h3>
-                                                        Praesent vitae tellus
-                                                        <small class="pull-right">40%</small>
-                                                    </h3>
-                                                    <div class="progress xs">
-                                                        <div class="progress-bar progress-bar-yellow" style="width: 40%"
-                                                            role="progressbar" aria-valuenow="20" aria-valuemin="0"
-                                                            aria-valuemax="100">
-                                                            <span class="sr-only">40% Complete</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <!-- end task item -->
-                                            <li>
-                                                <!-- Task item -->
-                                                <a href="#">
-                                                    <h3>
-                                                        Nam varius sapien
-                                                        <small class="pull-right">80%</small>
-                                                    </h3>
-                                                    <div class="progress xs">
-                                                        <div class="progress-bar progress-bar-red" style="width: 80%"
-                                                            role="progressbar" aria-valuenow="20" aria-valuemin="0"
-                                                            aria-valuemax="100">
-                                                            <span class="sr-only">80% Complete</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <!-- end task item -->
-                                            <li>
-                                                <!-- Task item -->
-                                                <a href="#">
-                                                    <h3>
-                                                        Nunc fringilla
-                                                        <small class="pull-right">90%</small>
-                                                    </h3>
-                                                    <div class="progress xs">
-                                                        <div class="progress-bar progress-bar-primary"
-                                                            style="width: 90%" role="progressbar" aria-valuenow="20"
-                                                            aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">90% Complete</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <!-- end task item -->
-                                        </ul>
-                                    </li>
-                                    <li class="footer">
-                                        <a href="#">View all tasks</a>
-                                    </li>
-                                </ul>
-                            </li> --}}
-                            <!-- User Account -->
-                            <li class="dropdown user user-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}"
-                                        class="user-image rounded-circle" style="margin-top:1rem">
-                                </a>
-                                <ul class="dropdown-menu scale-up">
-                                    <!-- User image -->
-                                    <li class="user-header">
-                                        <img src="{{ Auth::user()->profile_photo_url }}"
-                                            alt="{{ Auth::user()->name }}" class="float-left rounded-circle">
+                                  <form method="POST" action="{{ route('logout') }}">
+                                      @csrf
 
-                                        <p>
-                                            {{ Auth::user()->name }}
-                                            <small class="mb-5">{{ Auth::user()->email }}</small>
-                                            <a href="#" class="btn btn-danger btn-sm btn-rounded">View Profile</a>
-                                        </p>
-                                    </li>
-                                    <!-- Menu Body -->
-                                    <li class="user-body">
-                                        <div class="row no-gutters">
-                                            <div class="col-12 text-left">
-                                                <a href="{{ route('profile.show') }}"><i
-                                                        class="ion ion-person"></i>{{ __('Profile') }}</a>
-                                            </div>
-                                            {{-- <div class="col-12 text-left">
-                                                <a href="#"><i class="ion ion-email-unread"></i> Inbox</a>
-                                            </div>
-                                            <div class="col-12 text-left">
-                                                <a href="#"><i class="ion ion-settings"></i> Setting</a>
-                                            </div>
-                                            <div role="separator" class="divider col-12"></div>
-                                            <div class="col-12 text-left">
-                                                <a href="#"><i class="ti-settings"></i> Account Setting</a>
-                                            </div> --}}
-                                            <div role="separator" class="divider col-12"></div>
-                                            <div class="col-12 text-left">
-                                                <form method="POST" action="{{ route('logout') }}">
-                                                    @csrf
+                                      <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                            this.closest('form').submit();">
+                                                            <i data-feather="log-out"></i>{{ __('Logout') }}</a>
 
-                                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                            this.closest('form').submit();"><i
-                                                            class="fa fa-power-off"></i>{{ __('Logout') }}</a>
+                                  </form>
 
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <!-- /.row -->
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
+
+                              </li>
+                              {{-- <li><i data-feather="message-square"> </i>Inbox</li>
+                              <li><i data-feather="file-text"> </i>Taskboard</li>
+                              <li><i data-feather="settings"> </i>Settings </li> --}}
+                          </ul>
+                      </li>
+                  </ul>
+                  <div class="d-lg-none mobile-toggle pull-right"><i data-feather="more-horizontal"></i></div>
+              </div>
+          </div>
