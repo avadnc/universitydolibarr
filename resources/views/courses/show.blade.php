@@ -11,9 +11,12 @@
             <div class="text-white">
                 <h2 class="text-4xl">{{ $course->title }}</h2>
                 <h3 class="text-xl mb-2">{{ $course->subtitle }}</h3>
-                <p class="mb-2"><i class="fa fa-bar-chart"></i> {{ __('Level') }}: {{ $course->level->name }}</p>
-                <p class="mb-2"><i class="fa fa-tags"></i> {{ __('Category') }}: {{ $course->category->name }}</p>
-                <p class="mb-2"><i class="fa fa-users"></i> {{ __('Inscribed') }}: {{ $course->students_count }}</p>
+                <p class="mb-2"><i class="fa fa-bar-chart"></i> {{ __('Level') }}:
+                    {{ $course->level->name }}</p>
+                <p class="mb-2"><i class="fa fa-tags"></i> {{ __('Category') }}:
+                    {{ $course->category->name }}</p>
+                <p class="mb-2"><i class="fa fa-users"></i> {{ __('Inscribed') }}:
+                    {{ $course->students_count }}</p>
                 <p><i class="fa fa-star"></i> {{ $course->rating }}</p>
             </div>
         </div>
@@ -44,35 +47,33 @@
                 <h4 class="font-bold text-3xl mb-2">Temario</h4>
 
                 @foreach ($course->sections as $section)
-                    <article class="mb-4 shadow"
-                    @if ($loop->first)
+                    <article class="mb-4 shadow" @if ($loop->first)
                         x-data="{ open: true }"
                     @else
                         x-data="{ open: false }"
-                    @endif
-                    >
-                        <header class="border border-gray-200 px-4 py-2 cursor-pointer bg-gray-200"
-                            x-on:click="open = !open">
-                            <h5 class="font-bold text-lg text-gray-600  mb-2 ">{{ $section->name }}</h5>
-                        </header>
-                        <div class="bg-white py-2 px-4 w-full" x-show="open">
-                            <ul class="grid grid-cols-1 gap-2 ">
-                                @foreach ($section->lessons as $lesson)
-                                    <li class="text-gray-600 text-base mb-2"><i
-                                            class="fa fa-play-circle mr-2 text-gray-600"></i>{{ $lesson->name }}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
+                @endif
+                >
+                <header class="border border-gray-200 px-4 py-2 cursor-pointer bg-gray-200" x-on:click="open = !open">
+                    <h5 class="font-bold text-lg text-gray-600  mb-2 ">{{ $section->name }}</h5>
+                </header>
+                <div class="bg-white py-2 px-4 w-full" x-show="open">
+                    <ul class="grid grid-cols-1 gap-2 ">
+                        @foreach ($section->lessons as $lesson)
+                            <li class="text-gray-600 text-base mb-2"><i
+                                    class="fa fa-play-circle mr-2 text-gray-600"></i>{{ $lesson->name }}
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
 
-                    </article>
+                </article>
                 @endforeach
             </section>
 
             <!-- Requirements -->
 
             <section class="mt-12 mb-8">
-                <h4 class="font-bold text-3xl">Requisitos</h4>
+                <h4 class="font-bold text-3xl text-gray-800">Requisitos</h4>
                 <ul class="list-disc list-inside">
                     @foreach ($course->requirements as $requirement)
                         <li class="text-gray-700 text-base">{{ $requirement->name }}</li>
@@ -83,13 +84,13 @@
             <!-- Description -->
 
             <section>
-                <h4 class="font-bold text-3xl">Descripción</h4>
+                <h4 class="font-bold text-3xl text-gray-800">Descripción</h4>
 
                 <div class="text-gray-700 text-base">
-                    {{ $course->description }}
+                    {!! $course->description !!}
                 </div>
-
             </section>
+            @livewire('courses-reviews', ['course' => $course])
         </div>
 
         <!-- aside -->
@@ -108,12 +109,20 @@
                     </div>
 
                     @can('enrolled', $course)
-                        <a class="btn btn-danger btn-block mt-4" href="{{ route('courses.status',$course) }}">Continuar con el curso</a>
+                        <a class="btn btn-danger btn-block mt-4" href="{{ route('courses.status', $course) }}">Continuar
+                            con el curso</a>
                     @else
-                        <form action="{{ route('courses.enrolled', $course) }}" method="POST">
-                            @csrf
-                            <button class="btn btn-danger btn-block mt-4">Adquirir este curso</button>
-                        </form>
+                        @if ($course->price->value == 0)
+                        <p class="text-2xl font-bold text-green-800 mt-3 mb-2">Gratis!!</p>
+                            <form action="{{ route('courses.enrolled', $course) }}" method="POST">
+                                @csrf
+                                <button class="btn btn-danger btn-block">Adquirir este curso</button>
+                            </form>
+                        @else
+                        <p class="text-2xl font-bold text-gray-500 mt-3 mb-2">{{ $course->price->value }} $USD</p>
+                            <a href="{{ route('payment.checkout',$course) }}" class="btn btn-primary btn-block">Comprar el Curso</a>
+                        @endif
+
                     @endcan
 
                 </div>
@@ -135,7 +144,8 @@
                                     alt="{{ $similar->teacher->name }}">
                                 <p class="text-gray-700 text-sm ml-2">{{ $similar->teacher->name }}</p>
                             </div>
-                            <p class="text-sm"><i class="fa fa-star text-yellow-400 mr-2"></i>{{ $similar->rating }}
+                            <p class="text-sm"><i
+                                    class="fa fa-star text-yellow-400 mr-2"></i>{{ $similar->rating }}
                             </p>
                         </div>
                     </article>

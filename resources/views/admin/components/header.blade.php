@@ -1,21 +1,20 @@
-
-          <div class="main-header-right">
-              <div class="main-header-left text-center">
-                  <div class="logo-wrapper"><a href="index.html"><img src="{{ asset('assets/images/logo/logo.png') }}"
-                              alt=""></a>
-                  </div>
-              </div>
-              <div class="mobile-sidebar">
-                  <div class="media-body text-right switch-sm">
-                      <label class="switch ml-3"><i class="font-primary" id="sidebar-toggle"
-                              data-feather="align-center"></i></label>
-                  </div>
-              </div>
-              <div class="vertical-mobile-sidebar"><i class="fa fa-bars sidebar-bar"> </i></div>
-              <div class="nav-right col pull-right right-menu">
-                  <ul class="nav-menus">
-                      <li>
-                          {{-- <form class="form-inline search-form" action="#" method="get">
+<div class="main-header-right">
+    <div class="main-header-left text-center">
+        <div class="logo-wrapper"><a href="{{ route('home') }}"><img
+                    src="{{ asset('assets/images/logo/logo.png') }}" alt=""></a>
+        </div>
+    </div>
+    <div class="mobile-sidebar">
+        <div class="media-body text-right switch-sm">
+            <label class="switch ml-3"><i class="font-primary" id="sidebar-toggle"
+                    data-feather="align-center"></i></label>
+        </div>
+    </div>
+    <div class="vertical-mobile-sidebar"><i class="fa fa-bars sidebar-bar"> </i></div>
+    <div class="nav-right col pull-right right-menu">
+        <ul class="nav-menus">
+            <li>
+                {{-- <form class="form-inline search-form" action="#" method="get">
                               <div class="form-group">
                                   <div class="Typeahead Typeahead--twitterUsers">
                                       <div class="u-posRelative">
@@ -30,10 +29,10 @@
                                   </div>
                               </div>
                           </form> --}}
-                      </li>
-                      {{-- <li><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i
+            </li>
+            {{-- <li><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i
                                   data-feather="maximize"></i></a></li> --}}
-                      {{-- <li class="onhover-dropdown"><img class="img-fluid img-shadow-warning"
+            {{-- <li class="onhover-dropdown"><img class="img-fluid img-shadow-warning"
                               src="../assets/images/dashboard/bookmark.png" alt="">
                           <div class="onhover-show-div bookmark-flip">
                               <div class="flip-card">
@@ -134,37 +133,42 @@
                               <li class="bg-light txt-dark"><a href="#">All </a> notification</li>
                           </ul>
                       </li> --}}
-                      {{-- <li><a class="right_side_toggle" href="#"><img class="img-fluid img-shadow-success"
+            {{-- <li><a class="right_side_toggle" href="#"><img class="img-fluid img-shadow-success"
                                   src="../assets/images/dashboard/chat.png" alt=""></a></li> --}}
 
-                      <li class="onhover-dropdown"> <span class="media user-header"><img style="max-width: 5rem;" class="img-fluid rounded-circle" src="{{ Auth::user()->profile_photo_url }}"
-                                  alt=""></span>
-                          <ul class="onhover-show-div profile-dropdown">
-                              <li class="gradient-primary">
-                                  <h5 class="f-w-600 mb-0">{{ Auth::user()->name }}</h5> <span><small
-                                          class="mb-5">{{ Auth::user()->email }}</small></span>
-                              </li>
-                              <li><a href="{{ route('profile.show') }}"><i data-feather="user"></i>{{ __('Profile') }}</a></li>
-                              <li><a href="{{ route('courses.index') }}"><i data-feather="book-open"></i>{{ __('Courses') }}</a></li>
-                              <li>
+            <li class="onhover-dropdown"> <span class="media user-header"><img style="max-width: 5rem;"
+                        class="img-fluid rounded-circle" src="{{ Auth::user()->profile_photo_url }}" alt=""></span>
+                <ul class="onhover-show-div profile-dropdown">
+                    <li class="gradient-primary">
+                        <h5 class="f-w-600 mb-0">{{ Auth::user()->name }}</h5> <span><small
+                                class="mb-5">{{ Auth::user()->email }}</small></span>
+                    </li>
+                    <li><a href="{{ route('profile.show') }}"><i data-feather="user"></i>{{ __('Profile') }}</a>
+                    </li>
+                    <li><a href="{{ route('instructor.courses.index') }}"><i
+                                data-feather="book-open"></i>{{ __('Instructor') }}</a></li>
+                    <li><a href="{{ route('courses.index') }}"><i
+                                data-feather="book-open"></i>{{ __('Courses') }}</a></li>
 
-                                  <form method="POST" action="{{ route('logout') }}">
-                                      @csrf
+                    <li>
 
-                                      <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                             this.closest('form').submit();">
-                                                            <i data-feather="log-out"></i>{{ __('Logout') }}</a>
+                                <i data-feather="log-out"></i>{{ __('Logout') }}</a>
 
-                                  </form>
+                        </form>
 
 
-                              </li>
-                              {{-- <li><i data-feather="message-square"> </i>Inbox</li>
+                    </li>
+                    {{-- <li><i data-feather="message-square"> </i>Inbox</li>
                               <li><i data-feather="file-text"> </i>Taskboard</li>
                               <li><i data-feather="settings"> </i>Settings </li> --}}
-                          </ul>
-                      </li>
-                  </ul>
-                  <div class="d-lg-none mobile-toggle pull-right"><i data-feather="more-horizontal"></i></div>
-              </div>
-          </div>
+                </ul>
+            </li>
+        </ul>
+        <div class="d-lg-none mobile-toggle pull-right"><i data-feather="more-horizontal"></i></div>
+    </div>
+</div>

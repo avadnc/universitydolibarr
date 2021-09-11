@@ -9,6 +9,16 @@ use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:Listar Rol')->only('index');
+        $this->middleware('can:Crear Rol')->only('create', 'store');
+        $this->middleware('can:Editar Rol')->only('edit', 'update');
+        $this->middleware('can:Eliminar Rol')->only('destroy');
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -104,8 +114,12 @@ class RoleController extends Controller
             'permissions' => 'required',
         ]);
 
+        $role->update([
+            'name' => $request->name,
+        ]);
+
         $role->permissions()->sync($request->permissions);
-        return redirect()->route('admin.roles.edit',$role);
+        return redirect()->route('admin.roles.edit', $role);
 
     }
 

@@ -72,7 +72,7 @@ class User extends Authenticatable
     // one to many
     public function courses_dictated()
     {
-        return $this->hasMany('App\Models\Courses');
+        return $this->hasMany('App\Models\Course');
     }
 
     public function reviews()
@@ -93,7 +93,7 @@ class User extends Authenticatable
     //many to many
     public function courses_enrolled()
     {
-        return $this->belongsToMany('App\Models\Courses');
+        return $this->belongsToMany('App\Models\Course');
     }
 
     public function lessons()

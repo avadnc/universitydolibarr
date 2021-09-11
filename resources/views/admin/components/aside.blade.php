@@ -2,12 +2,19 @@
     <ul class="iconMenu-bar custom-scrollbar">
 
         <li><a class="bar-icons" href="javascript:void(0)">
-               <i class="pe-7s-settings"></i><span>Config</span>
+                <i class="pe-7s-settings"></i><span>Config</span>
             </a>
             <ul class="iconbar-mainmenu custom-scrollbar">
-                <li class="iconbar-header">Dashboard</li>
-                <li><a href="{{ route('admin.home') }}">Inicio</a></li>
-                <li><a href="{{ route('admin.roles.index') }}">Listado de roles</a></li>
+                <li class="iconbar-header">Configuración</li>
+                @can('Ver Dashboard')
+                    <li><a href="{{ route('admin.home') }}">Dashboard</a></li>
+                @endcan
+                @can('Listar Rol')
+                    <li><a href="{{ route('admin.roles.index') }}">Roles</a></li>
+                @endcan
+                @can('Leer Usuarios')
+                    <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
+                @endcan
                 {{-- <li class="iconbar-header sub-header">Widgets</li>
                 <li><a href="general-widget.html">General widget</a></li>
                 <li><a href="chart-widget.html">Chart widget</a></li>
@@ -15,6 +22,18 @@
                 <li><a href="../starter-kit/index.html">starter-kit </a></li> --}}
             </ul>
         </li>
+        <li>
+            <a class="bar-icons" href="javascript:void(0)"><i
+                    class="pe-7s-notebook"></i><span>Cursos</span></a>
+            <ul class="iconbar-mainmenu custom-scrollbar">
+                <li class="iconbar-header">Administración</li>
+                <li><a href="{{ route('admin.courses.index') }}">Pendientes de revisión</a></li>
+                <li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
+                <li><a href="{{ route('admin.levels.index') }}">Niveles</a></li>
+                <li><a href="{{ route('admin.prices.index') }}">Precios</a></li>
+            </ul>
+        </li>
+{{-- <span class="badge badge-pill badge-primary">New</span> para indicar que hay una revisió nueva --}}
         {{-- <li><a class="bar-icons" href="javascript:void(0)"><i class="pe-7s-settings"></i><span>UI
                     Kits</span></a>
             <ul class="iconbar-mainmenu custom-scrollbar">

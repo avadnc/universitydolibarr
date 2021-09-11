@@ -18,25 +18,38 @@
                 </div>
             @endif
 
-            <div class="flex items-center mt-4 cursor-pointer">
+            <!-- marcar como terminado -->
+            <div class="flex justify-between mt-4">
+                <div class="flex items-center mt-4 cursor-pointer">
 
-                <label for="toggleB" class="flex items-center cursor-pointer">
-                    <!-- toggle -->
-                    <div class="relative">
-                        <!-- input -->
-                        <input type="checkbox" id="toggleB" class="sr-only" wire:click="completed" @if ($current->completed) checked @endif>
-                        <!-- line -->
-                        <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
-                        <!-- dot -->
-                        <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
+                    <label for="toggleB" class="flex items-center cursor-pointer">
+                        <!-- toggle -->
+                        <div class="relative">
+                            <!-- input -->
+                            <input type="checkbox" id="toggleB" class="sr-only" wire:click="completed"
+                                @if ($current->completed) checked @endif>
+                            <!-- line -->
+                            <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
+                            <!-- dot -->
+                            <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
+                        </div>
+                        <!-- label -->
+                        <div class="ml-3 text-gray-700 font-medium">
+                            Marcar como terminada
+                        </div>
+                    </label>
+
+                </div>
+                @if ($current->resource)
+                    <div class="flex items-center mt-4 cursor-pointer" wire:click="download">
+                        <i style="font-size:35px" class="fa fa-download text-gray-600"></i>
+                        <p class="ml-4">Descargar recurso</p>
                     </div>
-                    <!-- label -->
-                    <div class="ml-3 text-gray-700 font-medium">
-                        Marcar como terminada
-                    </div>
-                </label>
+                @endif
 
             </div>
+
+            <!-- ./ -->
 
             <div class="card mt-2">
                 <div class="card-body flex text-gray-500 font-bold">
@@ -46,13 +59,15 @@
                     @endif
 
                     @if ($this->next)
-                        <a wire:click="changeLesson({{ $this->next }})" class="ml-auto cursor-pointer">Tema Siguiente
+                        <a wire:click="changeLesson({{ $this->next }})" class="ml-auto cursor-pointer">Tema
+                            Siguiente
                             <i class="fa fa-angle-right ml-2 font-bold text-2xl"></i></a>
                     @endif
 
                 </div>
             </div>
         </div>
+
         <!-- ./ -->
 
         <!-- Lessons Section -->

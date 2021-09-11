@@ -132,12 +132,23 @@ $nav_links = [
                                 </div>
 
                                 <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                    {{ __('Profile') }}
+                                    <i class="fa fa-user"></i> {{ __('Profile') }}
                                 </x-jet-dropdown-link>
 
-                                <x-jet-dropdown-link href="{{ route('instructor.courses.index') }}">
-                                    {{ __('Instructor') }}
+                                <x-jet-dropdown-link href="{{ route('student.profile') }}">
+                                    <i class="fa fa-graduation-cap"></i> {{ __('Student') }}
                                 </x-jet-dropdown-link>
+
+                                @can('Leer Cursos')
+                                    <x-jet-dropdown-link href="{{ route('instructor.courses.index') }}">
+                                        <i class="fa fa-book"></i> {{ __('Instructor') }}
+                                    </x-jet-dropdown-link>
+                                @endcan
+                                @can('Ver Dashboard')
+                                    <x-jet-dropdown-link href="{{ route('admin.home') }}">
+                                        <i class="fa fa-dashboard"></i> Admin
+                                    </x-jet-dropdown-link>
+                                @endcan
 
                                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                     <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
@@ -152,8 +163,8 @@ $nav_links = [
                                     @csrf
 
                                     <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                            this.closest('form').submit();">
-                                        {{ __('Logout') }}
+                                                                                this.closest('form').submit();">
+                                        <i class="fa fa-sign-out"></i> {{ __('Logout') }}
                                     </x-jet-dropdown-link>
                                 </form>
                             </x-slot>
@@ -175,8 +186,8 @@ $nav_links = [
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -215,12 +226,21 @@ $nav_links = [
                     <!-- Account Management -->
                     <x-jet-responsive-nav-link href="{{ route('profile.show') }}"
                         :active="request()->routeIs('profile.show')">
-                        {{ __('Profile') }}
+                        <i class="fa fa-user"></i> {{ __('Profile') }}
                     </x-jet-responsive-nav-link>
-
-                    <x-jet-dropdown-link href="{{ route('instructor.courses.index') }}">
-                        {{ __('Instructor') }}
-                    </x-jet-dropdown-link>
+                    <x-jet-responsive-nav-link href="{{ route('student.profile') }}">
+                        <i class="fa fa-graduation-cap"></i> {{ __('Student') }}
+                    </x-jet-responsive-nav-link>
+                    @can('Leer Cursos')
+                        <x-jet-responsive-nav-link href="{{ route('instructor.courses.index') }}">
+                            <i class="fa fa-book"></i> {{ __('Instructor') }}
+                        </x-jet-responsive-nav-link>
+                    @endcan
+                    @can('Ver Dashboard')
+                        <x-jet-dropdown-link href="{{ route('admin.home') }}">
+                            <i class="fa fa-dashboard"></i> Admin
+                        </x-jet-dropdown-link>
+                    @endcan
 
                     @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                         <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}"
@@ -234,8 +254,8 @@ $nav_links = [
                         @csrf
 
                         <x-jet-responsive-nav-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                            this.closest('form').submit();">
-                            {{ __('Logout') }}
+                                                                this.closest('form').submit();">
+                            <i class="fa fa-sign-out"></i> {{ __('Logout') }}
                         </x-jet-responsive-nav-link>
                     </form>
 

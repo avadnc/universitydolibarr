@@ -35,6 +35,7 @@
     <link id="color" rel="stylesheet" href="{{ asset('assets/css/color-1.css') }}" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}">
+     @livewireScripts
 </head>
 
 <body>
@@ -67,10 +68,10 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6 footer-copyright">
-                            <p class="mb-0">Copyright © 2021 Poco. All rights reserved.</p>
+                            <p class="mb-0">Copyright © {{ date('Y') }}  Guacatate SAS.</p>
                         </div>
                         <div class="col-md-6">
-                            <p class="pull-right mb-0">Hand-crafted & made with<i class="fa fa-heart"></i></p>
+                            <p class="pull-right mb-0">Proyecto realizado con amor<i class="fa fa-heart"></i></p>
                         </div>
                     </div>
                 </div>
@@ -113,6 +114,7 @@
     <script src="{{ asset('assets/js/datepicker/date-picker/datepicker.custom.js') }}"></script>
     <script src="{{ asset('assets/js/chat-menu.js') }}"></script>
     <!-- Plugins JS Ends-->
+    @yield('scripts')
     <!-- Theme js-->
     <script src="{{ asset('assets/js/script.js') }}"></script>
     <!-- login js-->
