@@ -24,7 +24,7 @@
         }
         gtag('js', new Date());
 
-        gtag('config', 'G-7VX4VL6K7S');
+        gtag('config', env('GANALYTICS'));
     </script>
     @livewireStyles
 

@@ -20,6 +20,10 @@ use App\Http\Controllers\SitemapController;
 
 Route::get('/', HomeController::class)->name('home');
 Route::get('/sitemap.xml',[ SitemapController::class,'index']);
+Route::get('/sitemap/courses.xml', [SitemapController::class, 'courses']);
+Route::get('/sitemap/categories.xml', [SitemapController::class, 'categories']);
+
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
