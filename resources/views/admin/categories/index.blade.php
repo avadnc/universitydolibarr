@@ -49,6 +49,7 @@ $title = 'Dashboard';
                                     <thead>
                                         <th>ID</th>
                                         <th>Nombre</th>
+                                        <th>Slug</th>
                                         <th colspan="2"></th>
                                     </thead>
                                     <tbody>
@@ -56,6 +57,7 @@ $title = 'Dashboard';
                                             <tr>
                                                 <td>{{ $category->id }}</td>
                                                 <td>{{ $category->name }}</td>
+                                                <td>/{{ $category->slug }}</td>
                                                 <td width="10px">
                                                     <a class="btn btn-primary btn-s"
                                                         href="{{ route('admin.categories.edit', $category) }}">Editar</a>

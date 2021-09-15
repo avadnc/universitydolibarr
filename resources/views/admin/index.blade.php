@@ -1,5 +1,5 @@
 @php
-    $title = "Dashboard";
+$title = 'Dashboard';
 @endphp
 
 @extends('admin.layouts.app')
@@ -25,16 +25,39 @@
     </div>
     <!-- Container-fluid starts-->
     <div class="container-fluid">
-
         <div class="row">
-            <div class="col-lg-12 xl-100">
-                <div class="row">
-                    <h2>Hola desde Admin.index.blade</h2>
+            <div class="col-sm-6 col-xl-6 col-lg-6 box-col-6">
+                <div class="card gradient-primary o-hidden">
+                    <div class="b-r-4 card-body">
+                        <div class="media static-top-widget">
+                            <div class="align-self-center text-center"><i data-feather="book-open"></i></div>
+                            <div class="media-body"><span class="m-0 text-white">Cursos Totales</span>
+                                <h4 class="mb-0 counter">{{ $courses }}</h4><i class="icon-bg"
+                                    data-feather="book-open"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-6 col-lg-6 box-col-6">
+                <div class="card gradient-info o-hidden">
+                    <div class="b-r-4 card-body">
+                        <div class="media static-top-widget">
+                            <div class="align-self-center text-center">
+                                <div class="text-white i" data-feather="user-plus"></div>
+                            </div>
+                            <div class="media-body"><span class="m-0 text-white">Total Usuarios</span>
+                                <h4 class="mb-0 counter text-white">{{ $users }}</h4><i class="icon-bg"
+                                    data-feather="user-plus"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Container-fluid Ends-->
+    <!-- Container-fluid Ends-->
     </div>
 @endsection
 

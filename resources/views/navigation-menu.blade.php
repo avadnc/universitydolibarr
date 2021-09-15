@@ -10,6 +10,12 @@ $nav_links = [
         'route' => route('courses.index'),
         'active' => request()->routeIs('courses.*'),
     ],
+        [
+        'name' => 'Aviso de Privacidad',
+        'route' => route('privacy-policy'),
+        'active' => request()->routeIs('privacy-policy'),
+    ],
+
 ];
 
 @endphp

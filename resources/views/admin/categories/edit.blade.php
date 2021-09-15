@@ -39,6 +39,7 @@ $title = 'Dashboard';
                         <div class="card">
                             <div class="card-header">
                                 <h2>Editar categoría</h2>
+                                <a class="btn btn-success" href="{{ route('admin.categories.index') }}">Listado de categorias</a>
 
                             </div>
                             <div class="card-body">
@@ -47,6 +48,13 @@ $title = 'Dashboard';
                                 <div class="form-group">
                                     {!! Form::label('name', 'Nombre') !!}
                                     {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Escribir nombre de la categoría']) !!}
+                                    @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    {!! Form::label('slug', 'Slug') !!}
+                                    {!! Form::text('slug', null, ['class' => 'form-control']) !!}
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d9836b28c700679fbf083ba6dc296ccb",
+    "content-hash": "8c219b6041b191230ef382866e5d0bb8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3190,6 +3190,62 @@
             "time": "2020-08-18T17:17:46+00:00"
         },
         {
+            "name": "soved/laravel-gdpr",
+            "version": "v1.5.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sander3/laravel-gdpr.git",
+                "reference": "f652d1d69e883102b0c1f29ddd318ab3713adbcd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sander3/laravel-gdpr/zipball/f652d1d69e883102b0c1f29ddd318ab3713adbcd",
+                "reference": "f652d1d69e883102b0c1f29ddd318ab3713adbcd",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.5|~6.0|~7.0|~8.0",
+                "php": ">=7.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Soved\\Laravel\\Gdpr\\GdprServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Soved\\Laravel\\Gdpr\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sander de Vos",
+                    "email": "sander@tutanota.de"
+                }
+            ],
+            "description": "GDPR compliance with ease",
+            "keywords": [
+                "data-portability",
+                "data-retention",
+                "encryption",
+                "gdpr",
+                "laravel",
+                "soved"
+            ],
+            "support": {
+                "issues": "https://github.com/sander3/laravel-gdpr/issues",
+                "source": "https://github.com/sander3/laravel-gdpr/tree/v1.5.5"
+            },
+            "time": "2020-09-11T06:46:32+00:00"
+        },
+        {
             "name": "spatie/laravel-permission",
             "version": "4.2.0",
             "source": {
@@ -3266,6 +3322,61 @@
                 }
             ],
             "time": "2021-06-04T23:47:08+00:00"
+        },
+        {
+            "name": "statikbe/laravel-cookie-consent",
+            "version": "1.2.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/statikbe/laravel-cookie-consent.git",
+                "reference": "1b988326912d597daf22a2a5291fa5f50d40a0fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/statikbe/laravel-cookie-consent/zipball/1b988326912d597daf22a2a5291fa5f50d40a0fc",
+                "reference": "1b988326912d597daf22a2a5291fa5f50d40a0fc",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^6.0|^7.0|^8.0",
+                "php": "^7.0|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Statikbe\\CookieConsent\\CookieConsentServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Statikbe\\CookieConsent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kristof Serré",
+                    "email": "kristof@statik.be",
+                    "homepage": "https://www.statik.be"
+                }
+            ],
+            "description": "Cookie consent modal for EU",
+            "homepage": "https://github.com/statikbe/laravel-cookie-consent",
+            "keywords": [
+                "cookie",
+                "gdpr",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/statikbe/laravel-cookie-consent/issues",
+                "source": "https://github.com/statikbe/laravel-cookie-consent/tree/1.2.12"
+            },
+            "time": "2021-08-12T19:01:20+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

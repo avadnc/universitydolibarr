@@ -47,6 +47,13 @@ $title = 'Dashboard';
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+                                <div class="form-group">
+                                    {!! Form::label('slug', 'Slug') !!}
+                                    {!! Form::text('slug', null, ['class' => 'form-control']) !!}
+                                    @error('slug')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
                                 {!! Form::submit('Crear categoría', ['class' => 'btn btn-primary']) !!}
 
 
@@ -61,4 +68,26 @@ $title = 'Dashboard';
         </div>
         <!-- Container-fluid Ends-->
     </div>
+@endsection
+@section('scripts')
+    <script>
+        document.getElementById("name").addEventListener("keyup", slugChangeCategory);
+
+        function slugChangeCategory() {
+            title = document.getElementById("name").value;
+            document.getElementById("slug").value = slug(title);
+        }
+
+        function slug(str) {
+            var slug = "";
+            var trimmed = str.trim(str);
+
+            slug = trimmed
+                .replace(/[^a-z0-9-]/gi, "-")
+                .replace(/-+/g, "-")
+                .replace(/^-|-$/g, "");
+
+            return slug.toLocaleLowerCase();
+        }
+    </script>
 @endsection

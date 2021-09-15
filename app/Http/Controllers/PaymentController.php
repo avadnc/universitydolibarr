@@ -50,7 +50,7 @@ class PaymentController extends Controller
         } catch (\PayPal\Exception\PayPalConnectionException $ex) {
             // This will print the detailed information on the exception.
             //REALLY HELPFUL FOR DEBUGGING
-            echo $ex->getData();
+            dd($ex->getData());
         }
 
     }

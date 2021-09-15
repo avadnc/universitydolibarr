@@ -9,7 +9,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\LevelController;
 use App\Http\Controllers\Admin\PriceController;
 
-Route::get('', [HomeController::class, 'index'])->middleware('can:Ver Dashboard')->name('home');
+Route::get('/', [HomeController::class, 'index'])->middleware('can:Ver Dashboard')->name('home');
 
 Route::resource('roles', RoleController::class)->names('roles');
 Route::resource('users', UserController::class)->only(['index', 'edit', 'update'])->names('users');

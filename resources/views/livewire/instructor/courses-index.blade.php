@@ -19,28 +19,23 @@
         @if ($courses->count())
             <table class="min-w-full leading-normal">
                 <thead>
-                    <tr>
-                        <th
-                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                            Nombre
-                        </th>
-                        <th
-                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                            Matriculados
-                        </th>
-                        <th
-                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                            Clasificación
-                        </th>
-                        <th
-                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                            Status
-                        </th>
-                        <th
-                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                            Acciones
-                        </th>
-                    </tr>
+
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                        Nombre
+                    </th>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                        Matriculados
+                    </th>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                        Clasificación
+                    </th>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                        Status
+                    </th>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                        Acciones
+                    </th>
+
                 </thead>
                 <tbody>
                     @foreach ($courses as $course)
@@ -49,10 +44,12 @@
                                 <div class="flex items-center">
                                     <div class="flex-shrink-0 w-10 h-10">
                                         @isset($course->image)
-                                             <img class="w-full h-full rounded-full object-cover object-center"
-                                            src="{{ Storage::url($course->image->url) }}" alt="{{ $course->name }}" />
-                                            @else
-                                            <img  class="w-full h-full rounded-full object-cover object-center" src="{{ asset('image/noimage.png') }}" alt="{{ $course->name }}">
+                                            <img class="w-full h-full rounded-full object-cover object-center"
+                                                src="{{ Storage::url($course->image->url) }}"
+                                                alt="{{ $course->name }}" />
+                                        @else
+                                            <img class="w-full h-full rounded-full object-cover object-center"
+                                                src="{{ asset('image/noimage.png') }}" alt="{{ $course->name }}">
                                         @endisset
 
                                     </div>

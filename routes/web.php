@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\Contract\ContractController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,13 @@ use App\Http\Controllers\SitemapController;
  */
 
 Route::get('/', HomeController::class)->name('home');
-Route::get('/sitemap.xml',[ SitemapController::class,'index']);
-Route::get('/sitemap/courses.xml', [SitemapController::class, 'courses']);
-Route::get('/sitemap/categories.xml', [SitemapController::class, 'categories']);
+Route::get('sitemap.xml',[ SitemapController::class,'index']);
+Route::get('sitemap/courses.xml', [SitemapController::class, 'courses']);
+Route::get('sitemap/categories.xml', [SitemapController::class, 'categories']);
+Route::get('contract/privacy-policy', [ContractController::class, 'privacypolicy'])->name('privacy-policy');
+Route::get('contract/terms-conditions', [ContractController::class, 'termsconditions']);
+
+
 
 
 

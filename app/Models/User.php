@@ -8,11 +8,11 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Soved\Laravel\Gdpr\Contracts\Portable as PortableContract;
+use Soved\Laravel\Gdpr\Portable;
 use Spatie\Permission\Traits\HasRoles;
 
-
-
-class User extends Authenticatable
+class User extends Authenticatable implements PortableContract
 {
     use HasApiTokens;
     use HasFactory;
@@ -20,7 +20,14 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
     use HasRoles;
+    use Portable, Notifiable;
 
+    /**
+     * The relations to include in the downloadable data.
+     *
+     * @var array
+     */
+    protected $gdprWith = ['courses_dictated'];
 
     /**
      * The attributes that are mass assignable.

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class LessonObserver
 {
+
     public function creating(Lesson $lesson)
     {
         $url = $lesson->url;
@@ -52,4 +53,5 @@ class LessonObserver
 
         }
     }
+
 }

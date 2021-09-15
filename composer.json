@@ -17,7 +17,9 @@
         "laraveles/spanish": "^1.5",
         "livewire/livewire": "^2.0",
         "paypal/rest-api-sdk-php": "*",
-        "spatie/laravel-permission": "^4.2"
+        "soved/laravel-gdpr": "^1.5",
+        "spatie/laravel-permission": "^4.2",
+        "statikbe/laravel-cookie-consent": "^1.2"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
