@@ -7,9 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lesson extends Model
 {
-        protected $guarded = ['id'];
+    protected $guarded = ['id'];
 
     use HasFactory;
+
+    public function getCompletedAttribute()
+    {
+        return $this->users->contains(auth()->user()->id);
+    }
 
     // invers relationship
 
@@ -41,7 +46,7 @@ class Lesson extends Model
 
     public function resource()
     {
-        return $this->morphOne('App\Models\Resource','resourceable');
+        return $this->morphOne('App\Models\Resource', 'resourceable');
     }
 
     //polymorphic one to many
@@ -53,7 +58,7 @@ class Lesson extends Model
 
     public function reactions()
     {
-        return $this->morphMany('App\Models\Reaction','reactionable');
+        return $this->morphMany('App\Models\Reaction', 'reactionable');
     }
 
 }

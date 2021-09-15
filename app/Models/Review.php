@@ -15,12 +15,12 @@ class Review extends Model
 
     public function user()
     {
-        return $this->fbelongsTo('App\Models\User');
+        return $this->belongsTo('App\Models\User');
     }
 
     public function course()
     {
-        return $this->fbelongsTo('App\Models\Course');
+        return $this->belongsTo('App\Models\Course');
     }
 
 }

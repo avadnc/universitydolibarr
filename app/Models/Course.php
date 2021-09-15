@@ -21,6 +21,11 @@ class Course extends Model
         return "slug";
     }
 
+    public function observation()
+    {
+        return $this->hasOne('App\Models\Observation');
+    }
+
     public function getRatingAttribute()
     {
         if ($this->reviews_count) {

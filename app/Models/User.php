@@ -8,6 +8,9 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
+
+
 
 class User extends Authenticatable
 {
@@ -16,6 +19,8 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasRoles;
+
 
     /**
      * The attributes that are mass assignable.
@@ -67,7 +72,7 @@ class User extends Authenticatable
     // one to many
     public function courses_dictated()
     {
-        return $this->hasMany('App\Models\Courses');
+        return $this->hasMany('App\Models\Course');
     }
 
     public function reviews()
@@ -88,7 +93,7 @@ class User extends Authenticatable
     //many to many
     public function courses_enrolled()
     {
-        return $this->belongsToMany('App\Models\Courses');
+        return $this->belongsToMany('App\Models\Course');
     }
 
     public function lessons()
